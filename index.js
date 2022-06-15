@@ -1,20 +1,26 @@
 class Pizza {
-    constructor(id, nombre, ingredientes, precio) {
+    constructor(id, nombre, ingredientes, precio, imagen) {
         this.id = id,
             this.nombre = nombre,
             this.ingredientes = ingredientes
         this.precio = precio
+        this.imagen = imagen
     }
 }
 
-const Fugazeta = new Pizza(1, "Fugazeta", ["Muzzarella", "Cebolla", "Oregano", "Aceitunas"], 650)
-const Calabresa = new Pizza(2, "Calabresa", ["Muzzarella", "Longaniza", "Oregano", "Aceitunas"], 700)
-const Napolitana = new Pizza(3, "Napolitana", ["Muzzarella", "Tomate", "Ajo", "Oregano", "Aceitunas"], 750)
-const Roquefort = new Pizza(4, "Roquefort", ["Roquefort", "Muzzarella", "Oregano", "Aceitunas"], 670)
-const Hawaiana = new Pizza(5, "Hawaiana", ["Tomate frito", "Anana", "Muzzarella", "Oregano", "Aceitunas"], 10000)
-const Papita = new Pizza(6, "Papita", ["Muzzarella", "Papita pay", "Aceitunas"], 600)
+const Fugazeta = new Pizza(1, "Fugazeta", ["Muzzarella", "Cebolla", "Oregano", "Aceitunas"], 650, "./imagenes/fugazzeta.jpg")
+const Calabresa = new Pizza(2, "Calabresa", ["Muzzarella", "Longaniza", "Oregano", "Aceitunas"], 700, "./imagenes/calabresa.jpg")
+const Napolitana = new Pizza(3, "Napolitana", ["Muzzarella", "Tomate", "Ajo", "Oregano", "Aceitunas"], 750, "./imagenes/napolitana.jpg")
+const Roquefort = new Pizza(4, "Roquefort", ["Roquefort", "Muzzarella", "Oregano", "Aceitunas"], 670, "./imagenes/roquefort.jpg")
+const Hawaiana = new Pizza(5, "Hawaiana", ["Tomate frito", "Anana", "Muzzarella", "Oregano", "Aceitunas"], 10000, "./imagenes/hawaiana.jpg")
+const Papita = new Pizza(6, "Papita", ["Muzzarella", "Papita pay", "Aceitunas"], 600, "./imagenes/papita.jpg")
 
 const Pizzas = [Fugazeta, Calabresa, Napolitana, Roquefort, Hawaiana, Papita]
+
+miStorage = window.localStorage;
+miStorage.pizzas = JSON.stringify(Pizzas)
+
+console.log(Pizzas)
 
 function evaluarPizzas() {
 
@@ -90,6 +96,7 @@ buscarPizza.addEventListener("click", function (e) {
             if (pizza.id == numeroPizza.value) {
                 nombrePizza.innerHTML = `Pizza ${pizza.nombre}`
                 precioPizza.innerHTML = `$ ${pizza.precio}`
+                imagenPizza.src = pizza.imagen
             }
 
 
