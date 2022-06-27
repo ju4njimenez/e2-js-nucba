@@ -12,7 +12,7 @@ const Fugazeta = new Pizza(1, "Fugazeta", ["Muzzarella", "Cebolla", "Oregano", "
 const Calabresa = new Pizza(2, "Calabresa", ["Muzzarella", "Longaniza", "Oregano", "Aceitunas"], 700, "./imagenes/calabresa.jpg")
 const Napolitana = new Pizza(3, "Napolitana", ["Muzzarella", "Tomate", "Ajo", "Oregano", "Aceitunas"], 750, "./imagenes/napolitana.jpg")
 const Roquefort = new Pizza(4, "Roquefort", ["Roquefort", "Muzzarella", "Oregano", "Aceitunas"], 670, "./imagenes/roquefort.jpg")
-const Hawaiana = new Pizza(5, "Hawaiana", ["Tomate frito", "Anana", "Muzzarella", "Oregano", "Aceitunas"], 10000, "./imagenes/hawaiana.jpg")
+const Hawaiana = new Pizza(5, "Hawaiana", ["Jamón", "Anana", "Muzzarella", "Oregano", "Aceitunas"], 10000, "./imagenes/hawaiana.jpg")
 const Papita = new Pizza(6, "Papita", ["Muzzarella", "Papita pay", "Aceitunas"], 600, "./imagenes/papita.jpg")
 
 const Pizzas = [Fugazeta, Calabresa, Napolitana, Roquefort, Hawaiana, Papita]
